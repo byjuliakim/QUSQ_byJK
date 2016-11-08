@@ -21,12 +21,29 @@ function theme_setup() {
 	// add option to upload logo in theme customizer
 	add_theme_support( 'custom-logo' );
 
+	// option for header
+	$defaults = array(
+	    'default-image'          => '',
+	    'random-default'         => false,
+	    'width'                  => 0,
+	    'height'                 => 0,
+	    'flex-height'            => false,
+	    'flex-width'             => false,
+	    'default-text-color'     => '',
+	    'header-text'            => true,
+	    'uploads'                => true,
+	    'wp-head-callback'       => '',
+	    'admin-head-callback'    => '',
+	    'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-header', $defaults );
 
 	/* This theme uses wp_nav_menu() in one location.
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'footer' => 'Footer Navigation',
 	) );
 
 	/*
@@ -37,7 +54,24 @@ function theme_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
-
+	add_theme_support( 'custom-logo', array(
+		'height'      => 50,
+		'width'       => 50,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+	if( function_exists('acf_add_options_page') ) {
+	 
+		$option_page = acf_add_options_page(array(
+			'page_title' 	=> 'Theme General Settings',
+			'menu_title' 	=> 'Theme Settings',
+			'menu_slug' 	=> 'theme-general-settings',
+			'capability' 	=> 'edit_posts',
+			'redirect' 	=> false
+		));
+	 
+	}
 }
 endif;
 
@@ -179,6 +213,11 @@ function hackeryou_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	register_sidebar( array(
+		'name' => 'Hamburger Slide Menu',
+		'id' => 'hamburger',
+		'description' => 'Sliding Menu',
+	));
 
 }
 

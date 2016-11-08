@@ -1,5 +1,5 @@
 /*!
-* Theme Name: HackerYou Starter Theme
+* Theme Name: byjk Theme
 * Theme URI: http://hackeryou.com;
 * Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
 * Version: 1.0
@@ -7,7 +7,9 @@
 * Author URI: http://hackeryou.com
 */
 
+@import 'variables';
 @import 'normalize';
+@import 'header';
 @import 'typography';
 @import 'navigation';
 @import 'sidebar';
@@ -19,33 +21,322 @@ Default Styling
 ====================================
 */
 
+// font-family: 'Varela Round', sans-serif;
+// font-family: 'Raleway', sans-serif;
+
 img {
 	max-width: 100%;
 }
 
 body {
 	color: #333;
-}
-
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-.content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
+	font-family: 'Varela Round', sans-serif;
+	width:100vw;
+	overflow-x: hidden;
 }
 
 .full {
 	width: 100%;
 }
 
+a{
+	&:visited { 
+		text-decoration: none; 
+		color:inherit;
+	}
+}
 
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		display: block;
+		font-size:1.2rem;
+	}
+}
+.container{
+	max-width:1000px;
+	margin: 0 auto;
+	.content{
+		padding-left:60px;
+		padding-bottom:200px;
+		width: 70%;
+		margin: 0 auto;
+		margin-top:80px;
+	}
+}
 
+h1{
+	font-size:60px;
+	margin:0;
+	color:white;
+}
+h2{
+	color:white;
+	font-size:2.3rem;
+}
+h3{
+	font-size:1.6rem;
+	color:$gray;
+}
+h4{
+	font-size:1.3rem;	
+	color:$gray;
+}
+h5{
+	font-size:1.1rem;
+}
+.main-container, .main404{
+	height:285px;
+}
 
+.main{
+	margin-top:80px;
+}
+.flex{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:100%;
+	.enter{
+		font-size:2.4rem;
+		color:white;
+		border: 3px solid $bordergray;
+		background: white;
+		padding: 2px 25px;
+	}
+}
 
+.contact, .about{
+	display:flex;
+	justify-content:space-between;
+	.contactInfo{
+		margin-top:20px;
+		margin-bottom:10px;
+		p{
+			font-size:.9rem;
+			margin:0;
+		}
+		display:flex;
+		justify-content:flex-end;
+		
+		i{
+			margin-left:15px;
+		}
+	}
+	.left{
+		width:40%;
+		margin-top:150px;
+		text-align:right;
+	}
+	.right{
+		width:50%;
+		margin-top:80px
+	}
+	.contact-form{
+		p{
+			margin:0;
+			display:inline-block;
+			padding:none;
+		}
+		input{
+			border:none;
+			border-bottom:1px $gray solid;
+			width:100%;
+			background:transparent;
+			padding:5px;
+			margin-top:10px;
+		}
+		input[type=submit]{
+			color:black;
+			margin:0;
+			border:none;
+			background:transparent;
+			padding:0;
+			
+		}
+		textarea{
+			border:none;
+			width:100%;
+			border-bottom:1px $gray solid;
+			width:100%;
+			background:transparent;
+			resize:none;
+			height:100px;
+		}
+		.submit{
+			margin-top:15px;
+			display:flex;
+			align-items:center;
+			font-size:.8rem;
+			i{
+				color:$gray;
+			}
+		}
+	}
+}
+.about{
+	ul{
+		li{
+			display:inline-block;
+			
+			margin: 20px;
+			margin-left:0;
+			transition:.5s;
+		}
+	}
+}
+.portfolio{
+	.content{
+		padding-bottom:0;
+		display:block;
+		margin-top:120px;
+		height: 1550px;
+	}
+	a{
+		position:relative;
+		&:before{
+			position: absolute;
+		    content: '';
+		    width: 0;
+		    height: 2px;
+		    transition: all .5s ease;
+		    top: 1.1rem;
+		    right:50%;
+		    transform:tranlateX(-50%);
+		}
+		&:hover:before{
+			position: absolute;
+		    content: '';
+		    right:0;
+		    transform:none;
+		    width: 100%;
+		    background:$listgray;
+		}
+	}
+	.flex{
+		width:100%;
+		display:flex;
+		align-items: flex-start;
+		justify-content:flex-end;
+		margin-top:50px;
+	}
+	article{
+		width:90%;
+		margin-bottom:40px;
+		// .image{
+		// 	
+		// 	width: calc(100% + 10px);
+		// 	overflow:hidden;
+		// }
+		img{
+			max-width: 100%;
+			box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+			margin-bottom:25px;
+			// transition: all .5s ease-in-out;
+			// &:hover { 
+			// 	transform: scale(1.1);
+			// }
+		}
+		h2{
+			display:inline;
+			position:relative;
+			margin:20px 0;
+		}
+		p{
+			margin:5px;
+			font-size:.8rem;
+		}
+		.brief{
+			font-size:1.2rem;
+		}
+		a{
+			color:$mint;
+		}
+	}
+	.sidebar{
+		margin-top:70px;
+		width:30%;
+		h3{
+			margin-bottom:5px;
+		}
+		a{
+			color:black;
+			&:hover:before{
+				background:$mint;
+			}
+		}
+		a:visited{
+			color:black;
+		}
+		.link{
+			font-size:.8rem;
+		}
+		li{
+			font-size:1rem;
+		}
+		#searchform{
+			display:flex;
+			align-items:center;
+			margin: 10px 0;
+			background:$mint;
+			width:80%;
+			input[type=search]{
+				border:none;
+				padding:10px;
+				background: transparent;
+				color:white;
+			}
+			input[type=submit]{
+				color:white;
+				background: url('./images/search.png') no-repeat;
+				background-size: contain;
+				height:1.2rem;
+				width:1.2rem;
+				border:none;
+				margin-top:0;
+			}
+		}
+		h3{
+			color:$mint;
+		}
+		li{
+			list-style:none;
+		}
+	}
+}
 
-
-
+.blogpost{
+	.content{
+		padding-bottom:0px;
+	}
+	img{
+		margin-top:100px;
+		box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+		margin-bottom:10px;
+	}
+	.projectInfo{
+		display:flex;
+		justify-content:space-between;
+		p{
+			display:inline;
+			font-size:1rem;
+			span{
+				color:$gray;
+				font-size:.8rem;
+			}
+		}
+	}
+	#nav-below{
+		display:flex;
+		justify-content:space-between;	
+	}
+	.nav-previous, .nav-next{
+		display:inline-block;
+		font-size:1.2rem;
+		a{
+			color:$gray;
+		}
+	}
+}

@@ -5,17 +5,19 @@
 
     <div class="content">
       <?php // Start the loop ?>
-      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-        <h2><?php the_title(); ?></h2>
-        <?php the_content(); ?>
+		
+		<?php the_content(); ?>
+        
 
       <?php endwhile; // end the loop?>
     </div> <!-- /,content -->
 
-    <?php get_sidebar(); ?>
-
+    <?php //dynamic_sidebar('primary-widget-area'); ?>
+    
   </div> <!-- /.container -->
 </div> <!-- /.main -->
 
 <?php get_footer(); ?>
+<a href=""></a>

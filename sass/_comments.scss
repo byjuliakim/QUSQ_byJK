@@ -4,7 +4,7 @@
 
 h3 {
 	&#comments-title, &#reply-title {
-		color: #000000;
+		color: $mint;
 		font-weight: 700;
 		font-size: 20px;
 		margin-bottom: 0;
@@ -66,6 +66,8 @@ h3 {
 .comment-meta {
 	font-size: 12px;
 	margin: 0 0 5px;
+	border-radius:5px;
+
 	a {
 		&:link, &:visited {
 			color: #888888;
@@ -116,12 +118,18 @@ a.comment-edit-link {
 }
 
 input[type=submit] {
-	color: #333333;
+	background:$mint;
+	border:none;
+	color:white;
+	padding:10px;
+	margin-top:20px;
+	width:98%;
+	border-radius:5px;
 }
 
 #respond {
 	margin-top: 24px;
-	border-top: 1px solid #e7e7e7;
+	border-top: 2px solid $mint;
 	overflow: hidden;
 	position: relative;
 	.comment-notes {
@@ -166,6 +174,8 @@ h3#reply-title {
 	}
 	textarea {
 		width: 98%;
+		background: $gray;
+		border-radius:5px;
 	}
 	dt {
 		color: #888888;
@@ -181,9 +191,10 @@ h3#reply-title {
 		}
 	}
 	.form-submit {
-		margin: 0 0 24px;
+		margin: 10px 0 24px;
+		padding: 2px;	
 		input {
-			width: auto;
+			width: 98%;
 			font-size: 14px;
 		}
 	}
