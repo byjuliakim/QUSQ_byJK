@@ -1,7 +1,8 @@
 <footer>
-	<div class="slant">
-
-	</div>
+	<svg class="slant clearfix" width="100vw" preserveAspectRatio="none" viewBox="0 0 100 17">
+        <polygon points="0,12 0,17 100,17 100,2" style="fill:blue" />
+        <polygon points="0,10 0,12 100,2 100,0" style="fill:#E6E6E6;" />
+    </svg>
     <div class="container">
 		<?php 
 		   $custom_logo_id = get_theme_mod( 'custom_logo' );

@@ -48,14 +48,16 @@
                <h4><?php echo get_field('tagline_header'); ?></h4>
          <?php endif; ?>
       </div>
-      
     </div> <!-- /.container -->
-    <?php if ( is_404()) : ?>
-    <div class = "slant" style="background:<?php echo get_field('header_color', 'option');?>">
-    <?php else :?>
-    <div class = "slant" style="background:<?php echo get_field('header_color');?>">
-    <?php endif; ?>
-      
+      <svg class="slant" width="100vw" viewBox="0 0 100 17">
+        <?php if ( is_404()) : ?>
+          <polygon points="0,0 0,15 100,5 100,0" style="fill:<?php echo get_field('header_color', 'option');?>;" />
+          <polygon points="0,15 0,17 100,7 100,5" style="fill:#E6E6E6;" />
+        <?php else :?>
+          <polygon points="0,0 0,15 100,5 100,0" style="fill:<?php echo get_field('header_color');?>;" />
+          <polygon points="0,15 0,17 100,7 100,5" style="fill:#E6E6E6;" />
+        <?php endif; ?>
+      </svg>
     </div>
   </section>
   <section class="slide-menu">

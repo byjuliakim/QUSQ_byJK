@@ -3,25 +3,22 @@ header{
 	background:$pink;
 	width:100%;
 	padding-top:15px;
-	height:40vh;
+	//height:40vh;
 }
 .header{
 	.slant{
-		height: 285px;
-		width: 110%;
-		transform: rotate(350deg) translateX(15%) translateY(66%);
-		background: $pink;
+		// height: 285px;
+		// width: 110%;
+		//transform: rotate(350deg) translateX(15%) translateY(66%);
+		//background: $pink;
 		position:absolute;
-		z-index:-10;
-		bottom:6px;
-		right:170px;
-		border-bottom:10px solid $bordergray;
+		// border-bottom:10px solid $bordergray;
 	}
 	.container{
 		position:relative;
 		display:flex;
 		max-width:900px;
-		height:285px;
+		//height:285px;
 		
 		.sideTitle{
 			display:flex;
